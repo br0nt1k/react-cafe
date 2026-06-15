@@ -1,75 +1,48 @@
-# React + TypeScript + Vite
+# Sip Happens Café ☕️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Сучасний, інтерактивний віджет для збору та аналізу відгуків відвідувачів кав'ярні. Проєкт реалізований на базі **React** та **TypeScript** з фокусом на архітектурно правильне управління станом та сувору типізацію.
 
-Currently, two official plugins are available:
+## 🔗 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+👉 [Переглянути застосунок на Vercel](https://react-cafe-beta.vercel.app/)
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🛠️ Стек технологій
 
-Note: This will impact Vite dev & build performances.
+- **Core:** React 18 & TypeScript
+- **Build Tool:** Vite
+- **Styling:** CSS Modules, `modern-normalize` (уніфікація стилів у різних браузерах)
+- **Code Style:** Prettier
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 💡 Отримані навички та практичний досвід
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Цей проєкт спрямований на відпрацювання ключових концепцій комерційної розробки на React:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Управління станом (State Management):** Організація комплексного стану у вигляді об'єкта через `useState`. Реалізовано правильне імутабельне оновлення стану за допомогою спред-оператора (`...votes`), що гарантує коректний життєвий цикл компонентів.
+- **Підйом стану (Lifting State Up):** Збереження єдиного джерела істини (Single Source of Truth) в батьківському компоненті `App` та передача методів (`handleVote`, `resetVotes`) через пропси в дочірні компоненти.
+- **Обчислювальний стан (Computed State):** Розрахунок загальної кількості голосів (`totalVotes`) та відсотка позитивних відгуків (`positiveRate`) "на льоту" під час рендеру без створення зайвих стейтів. Це запобігає десинхронізації даних та оптимізує рендеринг.
+- **Умовний рендеринг (Conditional Rendering):** Реалізація динамічного інтерфейсу — автоматичне перемикання між блоком статистики `VoteStats` та заглушкою `Notification` залежно від наявності голосів, а також приховування кнопки _Reset_.
+- **Сувора типізація (TypeScript):** Повний захист коду від помилок за допомогою кастомних інтерфейсів (`Votes`), союзних типів (`VoteType`) та чіткої типізації пропсів для кожного окремого компонента (жодного `any`).
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📂 Структура проєкту
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Кожен компонент повністю ізольований у власну папку й містить логіку, типізацію та модульні стилі:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+src/
+├── components/
+│   ├── App/
+│   │   ├── App.tsx
+│   │   └── App.module.css
+│   ├── CafeInfo/
+│   ├── Notification/
+│   ├── VoteOptions/
+│   └── VoteStats/
+└── types/
+    └── votes.ts        # Глобальні типи для проєкту
 ```
