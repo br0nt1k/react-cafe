@@ -1,26 +1,28 @@
-```markdown
 # Sip Happens Café ☕️
 
-🌍 **International Version**
----
+## 🌍 **International Version**
 
 ### 📌 Project Description
+
 👋 A modern, interactive widget designed to collect and analyze customer feedback for a local coffee shop. The application focuses on clean, predictable state management, computing operational metrics on the fly, and ensuring bulletproof type safety.
 
 ### 💻 Core Technologies & Skills:
-* 🔧 **Core:** React & TypeScript for precise component architecture.
-* ⚡ **Build Tool:** Vite for fast feedback loops and bundling efficiency.
-* ⭐ **Styling:** CSS Modules & modern-normalize for maintaining isolated layout parameters.
-* 🛠️ **Code Style:** Code formatting driven strictly via Prettier.
+
+- 🔧 **Core:** React & TypeScript for precise component architecture.
+- ⚡ **Build Tool:** Vite for fast feedback loops and bundling efficiency.
+- ⭐ **Styling:** CSS Modules & modern-normalize for maintaining isolated layout parameters.
+- 🛠️ **Code Style:** Code formatting driven strictly via Prettier.
 
 ### 💡 Key Skills & Concepts Implemented:
-* **State Management:** Tracking collective review dimensions in a unified object via `useState`. Enforcing immutable updates using the JavaScript spread operator (`...votes`) to guarantee predictable lifecycle recalculations.
-* **Lifting State Up:** Establishing a Single Source of Truth inside the root `App` component and driving children behaviors smoothly by distributing handlers (`handleVote`, `resetVotes`) down the prop pipeline.
-* **Computed Data Processing:** Dynamically calculating absolute values (`totalVotes`) and satisfaction tracking (`positiveRate`) runtime during rendering cycles, completely eliminating out-of-sync bugs and extra hook variables.
-* **Conditional Interface Rendering:** Designing real-time visual responses—toggling viewports cleanly between interactive statistical outputs (`VoteStats`) and clean user notices (`Notification`) contingent upon current interaction counts.
-* **Strict Type Ecosystem:** Securing application runtimes by establishing custom data constraints (`Votes`), union states (`VoteType`), and declaring structural prop boundaries (`interface`) across all individual components.
+
+- **State Management:** Tracking collective review dimensions in a unified object via `useState`. Enforcing immutable updates using the JavaScript spread operator (`...votes`) to guarantee predictable lifecycle recalculations.
+- **Lifting State Up:** Establishing a Single Source of Truth inside the root `App` component and driving children behaviors smoothly by distributing handlers (`handleVote`, `resetVotes`) down the prop pipeline.
+- **Computed Data Processing:** Dynamically calculating absolute values (`totalVotes`) and satisfaction tracking (`positiveRate`) runtime during rendering cycles, completely eliminating out-of-sync bugs and extra hook variables.
+- **Conditional Interface Rendering:** Designing real-time visual responses—toggling viewports cleanly between interactive statistical outputs (`VoteStats`) and clean user notices (`Notification`) contingent upon current interaction counts.
+- **Strict Type Ecosystem:** Securing application runtimes by establishing custom data constraints (`Votes`), union states (`VoteType`), and declaring structural prop boundaries (`interface`) across all individual components.
 
 ### 📂 Project Structure:
+
 ```text
 src/
 ├── components/
@@ -66,7 +68,3 @@ src/
 ### 🔗 Живий сайт:
 
 👉 [Переглянути застосунок на Vercel](https://react-cafe-beta.vercel.app/)
-
-```
-
-```
